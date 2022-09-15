@@ -1,7 +1,11 @@
 {
   "name": "vanilla-basic",
   "version": "1.0.0",
-  "scripts": { 
-    "start": "sirv ./src public --cors --single --no-clear --port 8000"
+  "scripts": {
+    "start": "sirv ./src public --cors --single --no-clear --port 8000",
+    "dev": "sirv ./src public --cors --single --no-clear --port 8000 --dev --max-age 0"
+  },
+  "devDependencies": {
+    "sirv-cli": "^2.0.2"
   }
 }

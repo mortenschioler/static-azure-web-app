@@ -2,20 +2,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+.board {
+  padding-top: 100%; /* make sure the board is square by setting the height equal to the width */
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.board-colored {
+  background-image: url(img/board_colored.svg);
 }
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+.board-colorless {
+  background-image: url(img/board_colorless.svg);
 }
