@@ -10,13 +10,18 @@ const colorlessBoard = <div className="board board-colorless" />
 const domContainer = document.querySelector('#app');
 const root = ReactDOM.createRoot(domContainer);
 
-function Board(props) {
-    if (props.isColored) return coloredBoard;
-    else return colorlessBoard;
-}
 
-function Clickable(props) {
-    <div onClick={props.onClick}>{props.children}</div>
+var setAppState;
+
+function Board(props) {
+    var board;
+    if (props.isColored) board = coloredBoard;
+    else board = colorlessBoard;
+    return (
+        <div style= {{width: "75%", margin:"auto", "paddingTop":"2rem"}}>
+            {board}
+        </div>
+    );
 }
 
 class App extends React.Component {
@@ -24,8 +29,12 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isColored: true };
+        this.state = { isColored: false };
         this.changeColor = this.changeColor.bind(this);
+    }
+
+    componentDidMount() {
+        setAppState = this.setState.bind(this);
     }
 
     changeColor() {
